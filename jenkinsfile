@@ -1,0 +1,14 @@
+pipeline{
+agent any
+stages{
+	stage('Testing SimpleBooks API Framework')
+		{steps {
+			echo "Testing Started"
+			bat "pip install -r requirements.txt"
+			bat "pytest -vs"
+			echo "Testing Finished Successfully"
+			}
+		}
+	}
+}
+
