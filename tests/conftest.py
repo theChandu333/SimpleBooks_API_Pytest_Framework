@@ -12,7 +12,7 @@ from library.config import Config
 def authenticate():
     endpoint = "/api-clients/"
     num = random.randint(1, 100000)
-    body = {"clientName": "Chandu", "clientEmail": f"Chand+{num}@example.com"}
+    body = {"clientName": "Chandu", "clientEmail": f"Chandu+{num}@example.com"}
     response = requests.post(urljoin(Config.BASE_URL, endpoint), json=body)
     res = json.loads(response.text)
     token_list = jsonpath.jsonpath(res, "accessToken")
